@@ -25,7 +25,7 @@ class UI {
     ) / 10} C (${Math.round(
       ((weather.main.feels_like - 273.15) * 1.8 + 32) * 10
     ) / 10} F)`;
-    if(weather.visibility != Number){
+    if(isNaN(weather.visibility)){
       this.visibility.textContent=`Visibility: Not Available`
     }else{
       this.visibility.textContent = `Visibility: ${Math.round(
