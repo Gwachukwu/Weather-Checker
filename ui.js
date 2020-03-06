@@ -25,9 +25,13 @@ class UI {
     ) / 10} C (${Math.round(
       ((weather.main.feels_like - 273.15) * 1.8 + 32) * 10
     ) / 10} F)`;
-    this.visibility.textContent = `Visibility: ${Math.round(
-      (weather.visibility / 1000) * 10
-    ) / 10}km`;
+    if(weather.visibility != Number){
+      this.visibility.textContent=`Visibility: Not Available`
+    }else{
+      this.visibility.textContent = `Visibility: ${Math.round(
+        (weather.visibility / 1000) * 10
+      ) / 10}km`;
+    }
     this.wind.textContent = `Wind: ${weather.wind.deg} degrees, Speed: ${weather.wind.speed} kph`;
   }
 }
